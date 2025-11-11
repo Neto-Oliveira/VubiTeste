@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Formulários - Vobi Forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Dashboard Usuário -->
+    <div id="user-dashboard" class="screen active">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>Meus Formulários</h1>
+                <div class="user-info">
+                    <span id="user-name">Usuário</span>
+                    <button id="logout-user" class="btn-logout">Sair</button>
+                </div>
+            </div>
+        </header>
+        
+        <main class="dashboard-main">
+            <div class="welcome-section">
+                <h2>Bem-vindo ao Sistema de Formulários</h2>
+                <p>Responda aos formulários disponíveis abaixo:</p>
+            </div>
+            
+            <div class="available-forms">
+                <h2>Formulários Disponíveis</h2>
+                <div id="available-forms-list" class="forms-list">
+                    <!-- Formulários disponíveis serão carregados aqui -->
+                </div>
+            </div>
+            
+            <!-- Modal Responder Formulário -->
+            <div id="answer-form-modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 id="form-to-answer-title">Responder Formulário</h2>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <form id="answer-form">
+                            <div id="form-questions-container">
+                                <!-- Questões do formulário serão carregadas aqui -->
+                            </div>
+                            <div class="modal-actions">
+                                <button type="submit" class="btn-primary">Enviar Respostas</button>
+                                <button type="button" class="btn-secondary cancel-btn">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="answered-forms">
+                <h2>Formulários Respondidos</h2>
+                <div id="answered-forms-list" class="forms-list">
+                    <!-- Formulários respondidos serão carregados aqui -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="user.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Vobi Forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Dashboard Admin -->
+    <div id="admin-dashboard" class="screen active">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>Painel Administrativo</h1>
+                <div class="user-info">
+                    <span id="admin-name">Administrador</span>
+                    <button id="logout-admin" class="btn-logout">Sair</button>
+                </div>
+            </div>
+        </header>
+        
+        <main class="dashboard-main">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Formulários Ativos</h3>
+                    <span id="active-forms-count" class="stat-number">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Respostas Hoje</h3>
+                    <span id="today-responses" class="stat-number">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Total de Respostas</h3>
+                    <span id="total-responses" class="stat-number">0</span>
+                </div>
+            </div>
+            
+            <div class="actions-container">
+                <button class="btn-primary" id="create-form-btn">
+                    Criar Novo Formulário
+                </button>
+                <button class="btn-secondary" id="manage-forms-btn">
+                    Gerenciar Formulários
+                </button>
+                <button class="btn-secondary" id="view-responses-btn">
+                    Ver Respostas
+                </button>
+            </div>
+            
+            <!-- Modal Criar Formulário -->
+            <div id="create-form-modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Criar Novo Formulário</h2>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <form id="new-form-form">
+                            <div class="form-group">
+                                <label for="form-title">Título do Formulário</label>
+                                <input type="text" id="form-title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-description">Descrição</label>
+                                <textarea id="form-description" rows="3"></textarea>
+                            </div>
+                            <div id="questions-container">
+                                <!-- Questões serão adicionadas aqui -->
+                            </div>
+                            <button type="button" id="add-question-btn" class="btn-secondary">Adicionar Questão</button>
+                            <div class="modal-actions">
+                                <button type="submit" class="btn-primary">Salvar Formulário</button>
+                                <button type="button" class="btn-secondary cancel-btn">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal Gerenciar Formulários -->
+            <div id="manage-forms-modal" class="modal">
+                <div class="modal-content large">
+                    <div class="modal-header">
+                        <h2>Gerenciar Formulários</h2>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div id="forms-list-admin">
+                            <!-- Lista de formulários será carregada aqui -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal Ver Respostas -->
+            <div id="responses-modal" class="modal">
+                <div class="modal-content large">
+                    <div class="modal-header">
+                        <h2>Respostas dos Formulários</h2>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div id="responses-list">
+                            <!-- Respostas serão carregadas aqui -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="recent-forms">
+                <h2>Formulários Recentes</h2>
+                <div id="recent-forms-list" class="forms-list">
+                    <!-- Formulários recentes serão carregados aqui -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
